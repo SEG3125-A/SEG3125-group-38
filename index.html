@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Evaluation</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script>
+        function submitForm(event) {
+            event.preventDefault(); 
+            alert("Thank you for your opinion!"); 
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <img src="Toronto-Dominion_Bank_logo.svg.png" alt="TD Bank Logo" class="logo">
+    </header>
+
+    <main class="content">
+        <h1>Rate your experience on our website.</h1>
+        <form id="evaluationForm" onsubmit="submitForm(event)">
+            <div class="question">
+                <label for="textQuestion">1. Please describe your overall impression of the website:</label>
+                <textarea id="textQuestion" name="textQuestion" rows="4" cols="50"></textarea>
+            </div>
+            <div class="question">
+                <label>2. How would you rate the website's design?</label>
+                <input type="radio" name="designRating" value="excellent"> Excellent
+                <input type="radio" name="designRating" value="good"> Good
+                <input type="radio" name="designRating" value="average"> Average
+                <input type="radio" name="designRating" value="poor"> Poor
+            </div>
+            <div class="question">
+                <label>3. What is your preferred device for using the website?</label>
+                <select name="preferredDevice">
+                    <option value="desktop">Desktop</option>
+                    <option value="laptop">Laptop</option>
+                    <option value="tablet">Tablet</option>
+                    <option value="smartphone">Smartphone</option>
+                </select>
+            </div>
+            <div class="question">
+                <label>4. Which of the following features do you find useful on the website? (Select all that apply)</label>
+                <input type="checkbox" name="features" value="search"> Search
+                <input type="checkbox" name="features" value="navigation"> Navigation
+                <input type="checkbox" name="features" value="contact"> Contact Us
+                <input type="checkbox" name="features" value="blog"> Blog
+            </div>
+            <div class="question">
+                <label for="comments">5. Any additional comments or suggestions for improvement:</label>
+                <textarea id="comments" name="comments" rows="4" cols="50"></textarea>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>Website designed by Odilon ASSIH</p>
+    </footer>
+</body>
+</html>
+
