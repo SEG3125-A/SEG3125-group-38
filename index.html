@@ -1,63 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Evaluation</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <script>
-        function submitForm(event) {
-            event.preventDefault(); 
-            alert("Thank you for your opinion!"); 
-        }
-    </script>
+    <title> Grocery Store</title>
+    <link href="styles/style.css" rel="stylesheet" type="text/css">
 </head>
+
 <body>
-    <header>
-        <img src="Toronto-Dominion_Bank_logo.svg.png" alt="TD Bank Logo" class="logo">
-    </header>
+    <div id="title" class="title">
+        <h1>Best Grocery Store</h1>
+    </div>
+    <div class="tab">
+        <button class="tablinks" onclick="openInfo(event, 'Client')">Client</button>
+        <button class="tablinks" onclick="openInfo(event, 'Products')">Products</button>
+        <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
+    </div>
 
-    <main class="content">
-        <h1>Rate your experience on our website.</h1>
-        <form id="evaluationForm" onsubmit="submitForm(event)">
-            <div class="question">
-                <label for="textQuestion">1. Please describe your overall impression of the website:</label>
-                <textarea id="textQuestion" name="textQuestion" rows="4" cols="50"></textarea>
-            </div>
-            <div class="question">
-                <label>2. How would you rate the website's design?</label>
-                <input type="radio" name="designRating" value="excellent"> Excellent
-                <input type="radio" name="designRating" value="good"> Good
-                <input type="radio" name="designRating" value="average"> Average
-                <input type="radio" name="designRating" value="poor"> Poor
-            </div>
-            <div class="question">
-                <label>3. What is your preferred device for using the website?</label>
-                <select name="preferredDevice">
-                    <option value="desktop">Desktop</option>
-                    <option value="laptop">Laptop</option>
-                    <option value="tablet">Tablet</option>
-                    <option value="smartphone">Smartphone</option>
-                </select>
-            </div>
-            <div class="question">
-                <label>4. Which of the following features do you find useful on the website? (Select all that apply)</label>
-                <input type="checkbox" name="features" value="search"> Search
-                <input type="checkbox" name="features" value="navigation"> Navigation
-                <input type="checkbox" name="features" value="contact"> Contact Us
-                <input type="checkbox" name="features" value="blog"> Blog
-            </div>
-            <div class="question">
-                <label for="comments">5. Any additional comments or suggestions for improvement:</label>
-                <textarea id="comments" name="comments" rows="4" cols="50"></textarea>
-            </div>
-            <button type="submit">Submit</button>
-        </form>
-    </main>
+    <div id="Client" class="tabcontent">
+        <h3>Client Information</h3>
+        <p>Tell us a bit about your dietary restrictions and grocery habits</p>
 
-    <footer>
-        <p>Website designed by Odilon ASSIH</p>
-    </footer>
+        Please select the following dietary restriction:
+        <select id="dietSelect" name="dietSelect">
+            <option value=""></option>
+            <option value="Vegetarian">Vegetarian</option>
+            <option value="Gluten-Free">Gluten-Free</option>
+            <option value="None">None</option>
+        </select>
+
+        Please select the following grocery product preference:
+        <select id="prodPref" name="prodPre">
+            <option value=""></option>
+            <option value="Organic">Organic</option>
+            <option value="Non-organic">Non-organic</option>
+        </select>
+    </div>
+
+    <div id="Products" class="tabcontent">
+        <h3>Your targeted products</h3>
+        <p>We preselected products based on your dietary restrictions and grocery preferences.</p>
+        Please select items to add to your cart:
+        <div id="productList">
+            <!-- Sample list of products -->
+            <label for="product-1"><input type="checkbox" id="product-1" name="product-1" value="Product 1"> Product 1</label><br>
+            <label for="product-2"><input type="checkbox" id="product-2" name="product-2" value="Product 2"> Product 2</label><br>
+            <label for="product-3"><input type="checkbox" id="product-3" name="product-3" value="Product 3"> Product 3</label><br>
+            <!-- Add more products as needed -->
+        </div>
+        <button id="addCart" type="button" class="block" onclick="selectedItems()">
+            Add selected items to cart.
+        </button>
+    </div>
+
+    <div id="Cart" class="tabcontent">
+        <h1>Shopping Cart</h1>
+        <hr />
+        <h2>Your cart:</h2>
+        <div id="shoppingCart" class="innerContent"></div>
+    </div>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/functionality.js"></script>
+
+    <div id="signature">
+        Website designed by Odilon ASSIH.
+    </div>
 </body>
-</html>
 
+</html>
